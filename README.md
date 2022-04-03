@@ -1,5 +1,5 @@
-# Web App Cloudformation
-A simple web application deployed on AWS using cloudformation. This project does not focus on creating a web application but rather how to deploy it on AWS and autoscale it according to the traffic. For this purpose, EC2 instances are running in an auto scaling group. To expose the application to the world, an Application Load Balancer is attached to the Auto Scaling group.
+# Web App CloudFormation
+A simple web application deployed on AWS using CloudFormation. This project does not focus on creating a web application rather how to deploy it on AWS and autoscale it according to the traffic. For this purpose, EC2 instances are running in an auto scaling group. To expose the application to the world, an Application Load Balancer is attached to the Auto Scaling group.
 
 ## Architecture
 <p align="middle">
@@ -40,6 +40,13 @@ aws cloudformation deploy \
   * **ArchivePath**: Refers to the path of the archive in S3 bucket. Defaults value: archives/project-archive.zip
 
 **Tip:** Both [network.yml](./network.yml) and [servers.yml](./servers.yml) support many more parameters like changing the minimum and maximum number of EC2 instances that can be deployed. These parameters can be found in each file after description.
+
+## Delete CloudFormation Stacks
+To destroy the CloudFormation stacks and their associated resources run the following command
+```bash
+aws cloudformation delete-stack --stack-name <stack-to-destroy>
+```
+Alternatively, you can also delete stacks directly from AWS Console.
 
 ## Contact
 You can get in touch with me on LinkedIn: [Farhan Shoukat](https://www.linkedin.com/in/farhan-shoukat/)
